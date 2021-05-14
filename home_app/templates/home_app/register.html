@@ -1,0 +1,15 @@
+{% extends 'home_app/base.html' %}
+{% block body_block %}
+<h1 class="header-bar">Register</h1>
+<form id="form_dj" method="POST">
+    {% csrf_token %}
+    <label>{{ form.username.label }}</label>
+    {{form.username}}
+    <label>{{ form.password1.label }}</label>
+    {{form.password1}}
+    <label>{{ form.password2.label }}</label>
+    {{form.password2}}
+    <input style="margin-top:10px;" class="button" type="submit" value="Register">
+</form>
+<p style="margin-left: 20px;">Already have an account? <a href="{% url 'home_app:login' %}">Login</a></p>
+{% endblock body_block %}

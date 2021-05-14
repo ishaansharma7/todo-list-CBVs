@@ -1,0 +1,9 @@
+{% extends 'home_app/base.html' %}
+{% block body_block %}
+<h1 class="header-bar"><a href={% url 'home_app:tasks' %}>&#10096; Back<a></a></h1> 
+        <form id="form_dj" method='POST'>
+            {% csrf_token %}
+            <p>Are you sure you want to delete task "{{task.title}}"</p>
+            <input class="button" type="submit" value="Delete">
+        </form>
+{% endblock body_block %}

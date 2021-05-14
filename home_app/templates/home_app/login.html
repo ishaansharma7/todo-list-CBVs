@@ -1,0 +1,10 @@
+{% extends 'home_app/base.html' %}
+{% block body_block %}
+<h1 class="header-bar">Login</h1>
+<form id=form_dj method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="button" type="submit" value="Login">
+</form>
+<p style="margin-left: 20px;" >Don't have an account? <a href="{% url 'home_app:register' %}">Register</a></p>
+{% endblock body_block %}
